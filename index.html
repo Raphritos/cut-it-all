@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cut It All — Canivete Suíço de Mídia & Automação</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --border-color: #30363d;
+            --text-main: #c9d1d9;
+            --text-muted: #8b949e;
+            --accent-green: #238636;
+            --accent-green-hover: #2ea043;
+            --accent-blue: #1f6aa5;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; }
+
+        header {
+            background: linear-gradient(135deg, #161b22 0%, var(--accent-blue) 100%);
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+        header h1 { font-size: 3rem; color: #ffffff; margin-bottom: 15px; font-weight: 800; }
+        header p { font-size: 1.25rem; color: var(--text-muted); max-width: 700px; margin: 0 auto 30px auto; }
+
+        .btn-cta {
+            background-color: var(--accent-green);
+            color: white;
+            padding: 16px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            display: inline-block;
+            box-shadow: 0 4px 14px rgba(35, 134, 54, 0.4);
+        }
+        .btn-cta:hover { background-color: var(--accent-green-hover); transform: translateY(-2px); }
+
+        .container { max-width: 900px; margin: 50px auto; padding: 0 20px; }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+        .card h2 { font-size: 1.8rem; color: #ffffff; margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 12px; }
+        .card ul { list-style: none; }
+        .card li { padding: 12px 0; font-size: 1.1rem; border-bottom: 1px dashed var(--border-color); display: flex; align-items: center; gap: 10px; }
+        .card li:last-child { border-bottom: none; }
+
+        .download-section { text-align: center; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 40px; }
+        .download-section h2 { margin-bottom: 15px; color: #fff; }
+        .download-section p { color: var(--text-muted); margin-bottom: 25px; }
+
+        footer { text-align: center; padding: 40px; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid var(--border-color); margin-top: 60px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>✂️ Cut It All</h1>
+        <p>O automatizador definitivo de cortes por silêncio, legendas inteligentes por IA (Whisper) e processamento de mídia local.</p>
+        <a href="#baixar" class="btn-cta">🚀 Baixar Versão Gratuita</a>
+    </header>
+
+    <div class="container">
+        <section class="card">
+            <h2>🔥 O que o Cut It All faz por você:</h2>
+            <ul>
+                <li>✅ <strong>Corte Automático por Silêncio:</strong> Elimina pausas vazias e acelera a edição de vídeos instantaneamente.</li>
+                <li>✅ <strong>Legendas Automáticas com Whisper:</strong> Transcrição de áudio local de alta precisão orientada por inteligência artificial.</li>
+                <li>✅ <strong>Hardsub Profissional:</strong> Queima legendas estilizadas (TikTok/Reels, Gamer, Cinema) direto no vídeo.</li>
+                <li>✅ <strong>Extração de Áudio Isolado:</strong> Salva trilhas limpas em MP3, WAV ou FLAC com normalização EBU R128.</li>
+                <li>✅ <strong>Fila em Lote:</strong> Automatiza pastas inteiras de mídias direto no seu Windows.</li>
+            </ul>
+        </section>
+
+        <section class="download-section" id="baixar">
+            <h2>Comece a Usar Agora</h2>
+            <p>Baixe a versão atual e otimize seus cortes em segundos.</p>
+            <!-- Substitua pelo link do seu executável ou Release -->
+            <a href="#" class="btn-cta">Baixar Cut It All (.exe)</a>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Cut It All. Performance máxima no Windows.</p>
+    </footer>
+
+</body>
+</html>
