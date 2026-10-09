@@ -45,7 +45,7 @@
             cursor: pointer;
             transition: background 0.2s;
         }
-        .btn-lang:hover { background-color: 2d4373; }
+        .btn-lang:hover { background-color: #2d4373; }
 
         header h1 { font-size: 3rem; color: #ffffff; margin-bottom: 15px; font-weight: 800; margin-top: 20px; }
         header p { font-size: 1.25rem; color: var(--text-muted); max-width: 700px; margin: 0 auto 30px auto; }
@@ -79,6 +79,24 @@
         .card li { padding: 12px 0; font-size: 1.1rem; border-bottom: 1px dashed var(--border-color); display: flex; align-items: flex-start; gap: 10px; }
         .card li:last-child { border-bottom: none; }
 
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+        .step-item {
+            background: rgba(22, 27, 34, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+        }
+        .step-item h3 { color: #58a6ff; margin-bottom: 10px; font-size: 1.2rem; }
+
+        .faq-item { margin-bottom: 20px; }
+        .faq-item h3 { font-size: 1.1rem; color: #ffffff; margin-bottom: 5px; }
+        .faq-item p { color: var(--text-muted); font-size: 0.95rem; }
+
         .download-section { text-align: center; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 40px; }
         .download-section h2 { margin-bottom: 15px; color: #fff; }
         .download-section p { color: var(--text-muted); margin-bottom: 25px; }
@@ -109,10 +127,46 @@
             </ul>
         </section>
 
+        <!-- Seção Como Funciona -->
+        <section class="card">
+            <h2 id="t-how-title">⚡ How It Works in 3 Steps</h2>
+            <div class="steps-grid">
+                <div class="step-item">
+                    <h3 id="t-s1-title">1. Drop your media</h3>
+                    <p id="t-s1-desc">Select individual video/audio files or batch process entire folders directly in the queue.</p>
+                </div>
+                <div class="step-item">
+                    <h3 id="t-s2-title">2. Choose presets</h3>
+                    <p id="t-s2-desc">Configure silence detection thresholds, transcription options, or visual hardsub templates.</p>
+                </div>
+                <div class="step-item">
+                    <h3 id="t-s3-title">3. Process locally</h3>
+                    <p id="t-s3-desc">Hit run and let your local hardware and AI handle the heavy lifting with total privacy.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção FAQ -->
+        <section class="card">
+            <h2 id="t-faq-title">❓ Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3 id="t-faq1-q">Is Cut It All really free?</h3>
+                <p id="t-faq1-a">Yes! The current MVP version is completely free to download and use for all core media automation features.</p>
+            </div>
+            <div class="faq-item">
+                <h3 id="t-faq2-q">Why does Windows SmartScreen warn about the installer?</h3>
+                <p id="t-faq2-a">Because it's a newly released independent application, Windows doesn't recognize its digital signature yet. Just click "More info" and "Run anyway" to proceed safely.</p>
+            </div>
+            <div class="faq-item">
+                <h3 id="t-faq3-q">Are my files uploaded to the cloud?</h3>
+                <p id="t-faq3-a">No. All processing, silence cutting, and AI transcription run 100% locally on your computer, ensuring total privacy.</p>
+            </div>
+        </section>
+
         <section class="download-section" id="baixar">
             <h2 id="t-down-title">Start Using Now</h2>
             <p id="t-down-desc">Download the current version and optimize your cuts in seconds.</p>
-            <a href="https://github.com/Raphritos/cut-it-all/releases/download/v1.0.0/CutItAll_Setup.exe" class="btn-cta" id="t-cta-bottom">Download Cut It All (.exe)</a>
+            <a href="https://github.com/raphritos/cut-it-all/releases/download/v1.0.0/CutItAll_Setup.exe" class="btn-cta" id="t-cta-bottom">Download Cut It All (.exe)</a>
         </section>
     </div>
 
@@ -132,6 +186,14 @@
                 f3Title: "Professional Hardsub:", f3Desc: "Burns stylized subtitles (TikTok/Reels, Gamer, Cinema) directly into the video.",
                 f4Title: "Isolated Audio Extraction:", f4Desc: "Saves clean audio tracks in MP3, WAV, or FLAC with EBU R128 normalization.",
                 f5Title: "Batch Queue:", f5Desc: "Automates entire folders of media directly on your Windows PC.",
+                howTitle: "⚡ How It Works in 3 Steps",
+                s1Title: "1. Drop your media", s1Desc: "Select individual video/audio files or batch process entire folders directly in the queue.",
+                s2Title: "2. Choose presets", s2Desc: "Configure silence detection thresholds, transcription options, or visual hardsub templates.",
+                s3Title: "3. Process locally", s3Desc: "Hit run and let your local hardware and AI handle the heavy lifting with total privacy.",
+                faqTitle: "❓ Frequently Asked Questions",
+                faq1Q: "Is Cut It All really free?", faq1A: "Yes! The current MVP version is completely free to download and use for all core media automation features.",
+                faq2Q: "Why does Windows SmartScreen warn about the installer?", faq2A: "Because it's a newly released independent application, Windows doesn't recognize its digital signature yet. Just click 'More info' and 'Run anyway' to proceed safely.",
+                faq3Q: "Are my files uploaded to the cloud?", faq3A: "No. All processing, silence cutting, and AI transcription run 100% locally on your computer, ensuring total privacy.",
                 downTitle: "Start Using Now",
                 downDesc: "Download the current version and optimize your cuts in seconds.",
                 ctaBottom: "Download Cut It All (.exe)",
@@ -147,6 +209,14 @@
                 f3Title: "Hardsub Profissional:", f3Desc: "Queima legendas estilizadas (TikTok/Reels, Gamer, Cinema) direto no vídeo.",
                 f4Title: "Extração de Áudio Isolado:", f4Desc: "Salva trilhas limpas em MP3, WAV ou FLAC com normalização EBU R128.",
                 f5Title: "Fila em Lote:", f5Desc: "Automatiza pastas inteiras de mídias direto no seu Windows.",
+                howTitle: "⚡ Como Funciona em 3 Passos",
+                s1Title: "1. Adicione a mídia", s1Desc: "Selecione arquivos individuais de vídeo/áudio ou processe pastas inteiras direto na fila.",
+                s2Title: "2. Escolha os ajustes", s2Desc: "Configure os limites de corte de silêncio, opções de transcrição ou modelos visuais de hardsub.",
+                s3Title: "3. Processe localmente", s3Desc: "Clique em iniciar e deixe que o seu hardware e a IA façam o trabalho pesado com total privacidade.",
+                faqTitle: "❓ Perguntas Frequentes",
+                faq1Q: "O Cut It All é realmente gratuito?", faq1A: "Sim! A versão MVP atual é totalmente gratuita para baixar e utilizar em todos os recursos principais.",
+                faq2Q: "Por que o Windows avisa sobre o instalador (SmartScreen)?", faq2A: "Como é um aplicativo independente recém-lançado, o Windows ainda não reconhece a assinatura digital. Basta clicar em 'Mais informações' e 'Executar assim mesmo'.",
+                faq3Q: "Meus arquivos são enviados para a nuvem?", faq3A: "Não. Todo o processamento, corte de silêncio e transcrição por IA rodam 100% localmente no seu computador, garantindo privacidade total.",
                 downTitle: "Comece a Usar Agora",
                 downDesc: "Baixe a versão atual e otimize os seus cortes em segundos.",
                 ctaBottom: "Baixar Cut It All (.exe)",
@@ -154,7 +224,7 @@
             }
         };
 
-        let idiomaAtual = "en"; // Começa em inglês por padrão
+        let idiomaAtual = "en";
 
         function alternarIdioma() {
             idiomaAtual = idiomaAtual === "en" ? "pt" : "en";
@@ -175,6 +245,22 @@
             document.getElementById("t-f4-desc").innerText = t.f4Desc;
             document.getElementById("t-f5-title").innerText = t.f5Title;
             document.getElementById("t-f5-desc").innerText = t.f5Desc;
+
+            document.getElementById("t-how-title").innerText = t.howTitle;
+            document.getElementById("t-s1-title").innerText = t.s1Title;
+            document.getElementById("t-s1-desc").innerText = t.s1Desc;
+            document.getElementById("t-s2-title").innerText = t.s2Title;
+            document.getElementById("t-s2-desc").innerText = t.s2Desc;
+            document.getElementById("t-s3-title").innerText = t.s3Title;
+            document.getElementById("t-s3-desc").innerText = t.s3Desc;
+
+            document.getElementById("t-faq-title").innerText = t.faqTitle;
+            document.getElementById("t-faq1-q").innerText = t.faq1Q;
+            document.getElementById("t-faq1-a").innerText = t.faq1A;
+            document.getElementById("t-faq2-q").innerText = t.faq2Q;
+            document.getElementById("t-faq2-a").innerText = t.faq2A;
+            document.getElementById("t-faq3-q").innerText = t.faq3Q;
+            document.getElementById("t-faq3-a").innerText = t.faq3A;
 
             document.getElementById("t-down-title").innerText = t.downTitle;
             document.getElementById("t-down-desc").innerText = t.downDesc;
