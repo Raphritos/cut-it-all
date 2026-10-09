@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -89,53 +89,38 @@
 
     <header>
         <div class="lang-container">
-            <button class="btn-lang" id="langToggle" onclick="alternarIdioma()">🇺🇸 EN</button>
+            <button class="btn-lang" id="langToggle" onclick="alternarIdioma()">🇧🇷 PT</button>
         </div>
         <h1 id="t-title">✂️ Cut It All</h1>
-        <p id="t-subtitle">O automatizador definitivo de cortes por silêncio, legendas inteligentes por IA (Whisper) e processamento de mídia local.</p>
-        <a href="#baixar" class="btn-cta" id="t-cta-top">🚀 Baixar Versão Gratuita</a>
+        <p id="t-subtitle">The ultimate automated silence remover, AI subtitle generator (Whisper), and local media processor.</p>
+        <a href="#baixar" class="btn-cta" id="t-cta-top">🚀 Download Free Version</a>
     </header>
 
     <div class="container">
         <section class="card">
-            <h2 id="t-feat-title">🔥 O que o Cut It All faz por você:</h2>
+            <h2 id="t-feat-title">🔥 What Cut It All does for you:</h2>
             <ul>
-                <li>✅ <strong id="t-f1-title">Corte Automático por Silêncio:</strong> <span id="t-f1-desc">Elimina pausas vazias e acelera a edição de vídeos instantaneamente.</span></li>
-                <li>✅ <strong id="t-f2-title">Legendas Automáticas com Whisper:</strong> <span id="t-f2-desc">Transcrição de áudio local de alta precisão orientada por inteligência artificial.</span></li>
-                <li>✅ <strong id="t-f3-title">Hardsub Profissional:</strong> <span id="t-f3-desc">Queima legendas estilizadas (TikTok/Reels, Gamer, Cinema) direto no vídeo.</span></li>
-                <li>✅ <strong id="t-f4-title">Extração de Áudio Isolado:</strong> <span id="t-f4-desc">Salva trilhas limpas em MP3, WAV ou FLAC com normalização EBU R128.</span></li>
-                <li>✅ <strong id="t-f5-title">Fila em Lote:</strong> <span id="t-f5-desc">Automatiza pastas inteiras de mídias direto no seu Windows.</span></li>
+                <li>✅ <strong id="t-f1-title">Automatic Silence Cut:</strong> <span id="t-f1-desc">Eliminates empty pauses and speeds up video editing instantly.</span></li>
+                <li>✅ <strong id="t-f2-title">AI Subtitles with Whisper:</strong> <span id="t-f2-desc">High-precision local audio transcription powered by artificial intelligence.</span></li>
+                <li>✅ <strong id="t-f3-title">Professional Hardsub:</strong> <span id="t-f3-desc">Burns stylized subtitles (TikTok/Reels, Gamer, Cinema) directly into the video.</span></li>
+                <li>✅ <strong id="t-f4-title">Isolated Audio Extraction:</strong> <span id="t-f4-desc">Saves clean audio tracks in MP3, WAV, or FLAC with EBU R128 normalization.</span></li>
+                <li>✅ <strong id="t-f5-title">Batch Queue:</strong> <span id="t-f5-desc">Automates entire folders of media directly on your Windows PC.</span></li>
             </ul>
         </section>
 
         <section class="download-section" id="baixar">
-            <h2 id="t-down-title">Comece a Usar Agora</h2>
-            <p id="t-down-desc">Baixe a versão atual e otimize os seus cortes em segundos.</p>
-            <a href="#" class="btn-cta" id="t-cta-bottom">Baixar Cut It All (.exe)</a>
+            <h2 id="t-down-title">Start Using Now</h2>
+            <p id="t-down-desc">Download the current version and optimize your cuts in seconds.</p>
+            <a href="#" class="btn-cta" id="t-cta-bottom">Download Cut It All (.exe)</a>
         </section>
     </div>
 
     <footer>
-        <p id="t-footer">&copy; 2026 Cut It All. Performance máxima no Windows.</p>
+        <p id="t-footer">&copy; 2026 Cut It All. Maximum performance on Windows.</p>
     </footer>
 
     <script>
         const textos = {
-            pt: {
-                langBtn: "🇺🇸 EN",
-                subtitle: "O automatizador definitivo de cortes por silêncio, legendas inteligentes por IA (Whisper) e processamento de mídia local.",
-                ctaTop: "🚀 Baixar Versão Gratuita",
-                featTitle: "🔥 O que o Cut It All faz por você:",
-                f1Title: "Corte Automático por Silêncio:", f1Desc: "Elimina pausas vazias e acelera a edição de vídeos instantaneamente.",
-                f2Title: "Legendas Automáticas com Whisper:", f2Desc: "Transcrição de áudio local de alta precisão orientada por inteligência artificial.",
-                f3Title: "Hardsub Profissional:", f3Desc: "Queima legendas estilizadas (TikTok/Reels, Gamer, Cinema) direto no vídeo.",
-                f4Title: "Extração de Áudio Isolado:", f4Desc: "Salva trilhas limpas em MP3, WAV ou FLAC com normalização EBU R128.",
-                f5Title: "Fila em Lote:", f5Desc: "Automatiza pastas inteiras de mídias direto no seu Windows.",
-                downTitle: "Comece a Usar Agora",
-                downDesc: "Baixe a versão atual e otimize os seus cortes em segundos.",
-                ctaBottom: "Baixar Cut It All (.exe)",
-                footer: "&copy; 2026 Cut It All. Performance máxima no Windows."
-            },
             en: {
                 langBtn: "🇧🇷 PT",
                 subtitle: "The ultimate automated silence remover, AI subtitle generator (Whisper), and local media processor.",
@@ -150,13 +135,28 @@
                 downDesc: "Download the current version and optimize your cuts in seconds.",
                 ctaBottom: "Download Cut It All (.exe)",
                 footer: "&copy; 2026 Cut It All. Maximum performance on Windows."
+            },
+            pt: {
+                langBtn: "🇺🇸 EN",
+                subtitle: "O automatizador definitivo de cortes por silêncio, legendas inteligentes por IA (Whisper) e processamento de mídia local.",
+                ctaTop: "🚀 Baixar Versão Gratuita",
+                featTitle: "🔥 O que o Cut It All faz por você:",
+                f1Title: "Corte Automático por Silêncio:", f1Desc: "Elimina pausas vazias e acelera a edição de vídeos instantaneamente.",
+                f2Title: "Legendas Automáticas com Whisper:", f2Desc: "Transcrição de áudio local de alta precisão orientada por inteligência artificial.",
+                f3Title: "Hardsub Profissional:", f3Desc: "Queima legendas estilizadas (TikTok/Reels, Gamer, Cinema) direto no vídeo.",
+                f4Title: "Extração de Áudio Isolado:", f4Desc: "Salva trilhas limpas em MP3, WAV ou FLAC com normalização EBU R128.",
+                f5Title: "Fila em Lote:", f5Desc: "Automatiza pastas inteiras de mídias direto no seu Windows.",
+                downTitle: "Comece a Usar Agora",
+                downDesc: "Baixe a versão atual e otimize os seus cortes em segundos.",
+                ctaBottom: "Baixar Cut It All (.exe)",
+                footer: "&copy; 2026 Cut It All. Performance máxima no Windows."
             }
         };
 
-        let idiomaAtual = "pt";
+        let idiomaAtual = "en"; // Começa em inglês por padrão
 
         function alternarIdioma() {
-            idiomaAtual = idiomaAtual === "pt" ? "en" : "pt";
+            idiomaAtual = idiomaAtual === "en" ? "pt" : "en";
             const t = textos[idiomaAtual];
 
             document.getElementById("langToggle").innerText = t.langBtn;
