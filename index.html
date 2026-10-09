@@ -15,6 +15,8 @@
             --accent-green: #238636;
             --accent-green-hover: #2ea043;
             --accent-blue: #1f6aa5;
+            --accent-coffee: #ff813f;
+            --accent-kofi: #29abe0;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
@@ -97,6 +99,53 @@
         .faq-item h3 { font-size: 1.1rem; color: #ffffff; margin-bottom: 5px; }
         .faq-item p { color: var(--text-muted); font-size: 0.95rem; }
 
+        /* Estilo dos botões de Doação (Buy Me a Coffee + Ko-fi) */
+        .donate-card {
+            text-align: center;
+            background: linear-gradient(135deg, #161b22 0%, #1f242d 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 35px 20px;
+            margin-bottom: 30px;
+        }
+        .donate-card h2 { color: #ffffff; font-size: 1.6rem; margin-bottom: 10px; border: none; }
+        .donate-card p { color: var(--text-muted); margin-bottom: 25px; font-size: 0.95rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+        
+        .donate-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-coffee {
+            background-color: var(--accent-coffee);
+            color: white;
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            display: inline-block;
+            box-shadow: 0 4px 14px rgba(255, 129, 63, 0.3);
+        }
+        .btn-coffee:hover { background-color: #f4712d; transform: translateY(-2px); }
+
+        .btn-kofi {
+            background-color: var(--accent-kofi);
+            color: white;
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            display: inline-block;
+            box-shadow: 0 4px 14px rgba(41, 171, 224, 0.3);
+        }
+        .btn-kofi:hover { background-color: #2395c6; transform: translateY(-2px); }
+
         .download-section { text-align: center; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 40px; }
         .download-section h2 { margin-bottom: 15px; color: #fff; }
         .download-section p { color: var(--text-muted); margin-bottom: 25px; }
@@ -163,6 +212,18 @@
             </div>
         </section>
 
+        <!-- Seção Dupla de Doação (Buy Me a Coffee + Ko-fi) -->
+        <section class="donate-card">
+            <h2 id="t-donate-title">☕ Support the Project</h2>
+            <p id="t-donate-desc">Cut It All is 100% free and open. If this tool saved you hours of editing, choose your favorite platform to support!</p>
+            <div class="donate-buttons">
+                <!-- Substitua 'seu_usuario_bmc' pelo link real do Buy Me a Coffee -->
+                <a href="https://buymeacoffee.com/raphritos" target="_blank" class="btn-coffee" id="t-btn-coffee">☕ Buy me a coffee</a>
+                <!-- Substitua 'seu_usuario_kofi' pelo link real do Ko-fi -->
+                <a href="https://ko-fi.com/raphritos" target="_blank" class="btn-kofi" id="t-btn-kofi">🍵 Support on Ko-fi</a>
+            </div>
+        </section>
+
         <section class="download-section" id="baixar">
             <h2 id="t-down-title">Start Using Now</h2>
             <p id="t-down-desc">Download the current version and optimize your cuts in seconds.</p>
@@ -194,6 +255,10 @@
                 faq1Q: "Is Cut It All really free?", faq1A: "Yes! The current MVP version is completely free to download and use for all core media automation features.",
                 faq2Q: "Why does Windows SmartScreen warn about the installer?", faq2A: "Because it's a newly released independent application, Windows doesn't recognize its digital signature yet. Just click 'More info' and 'Run anyway' to proceed safely.",
                 faq3Q: "Are my files uploaded to the cloud?", faq3A: "No. All processing, silence cutting, and AI transcription run 100% locally on your computer, ensuring total privacy.",
+                donateTitle: "☕ Support the Project",
+                donateDesc: "Cut It All is 100% free and open. If this tool saved you hours of editing, choose your favorite platform to support!",
+                btnCoffee: "☕ Buy me a coffee",
+                btnKofi: "🍵 Support on Ko-fi",
                 downTitle: "Start Using Now",
                 downDesc: "Download the current version and optimize your cuts in seconds.",
                 ctaBottom: "Download Cut It All (.exe)",
@@ -216,10 +281,14 @@
                 faqTitle: "❓ Perguntas Frequentes",
                 faq1Q: "O Cut It All é realmente gratuito?", faq1A: "Sim! A versão MVP atual é totalmente gratuita para baixar e utilizar em todos os recursos principais.",
                 faq2Q: "Por que o Windows avisa sobre o instalador (SmartScreen)?", faq2A: "Como é um aplicativo independente recém-lançado, o Windows ainda não reconhece a assinatura digital. Basta clicar em 'Mais informações' e 'Executar assim mesmo'.",
-                faq3Q: "Meus arquivos são enviados para a nuvem?", faq3A: "Não. Todo o processamento, corte de silêncio e transcrição por IA rodam 100% localmente no seu computador, garantindo privacidade total.",
+                faq3Q: "Meus arquivos são enviados para a nuvem?", faq3A: "Não. Todo o processamento, corte de silêncio e transcrição por IA rodam 100% localmente no computador, garantindo privacidade total.",
+                donateTitle: "☕ Apoie o Projeto",
+                donateDesc: "O Cut It All é 100% gratuito e aberto. Se essa ferramenta te poupou horas de edição, escolha sua plataforma favorita para apoiar!",
+                btnCoffee: "☕ Buy me a coffee",
+                btnKofi: "🍵 Apoiar no Ko-fi",
                 downTitle: "Comece a Usar Agora",
                 downDesc: "Baixe a versão atual e otimize os seus cortes em segundos.",
-                ctaBottom: "Baixar Cut It All (.exe)",
+                ctaBottom: "Download Cut It All (.exe)",
                 footer: "&copy; 2026 Cut It All. Performance máxima no Windows."
             }
         };
@@ -261,6 +330,11 @@
             document.getElementById("t-faq2-a").innerText = t.faq2A;
             document.getElementById("t-faq3-q").innerText = t.faq3Q;
             document.getElementById("t-faq3-a").innerText = t.faq3A;
+
+            document.getElementById("t-donate-title").innerText = t.donateTitle;
+            document.getElementById("t-donate-desc").innerText = t.donateDesc;
+            document.getElementById("t-btn-coffee").innerText = t.btnCoffee;
+            document.getElementById("t-btn-kofi").innerText = t.btnKofi;
 
             document.getElementById("t-down-title").innerText = t.downTitle;
             document.getElementById("t-down-desc").innerText = t.downDesc;
