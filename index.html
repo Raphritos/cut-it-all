@@ -66,7 +66,7 @@
         }
         .btn-cta:hover { background-color: var(--accent-green-hover); transform: translateY(-2px); }
 
-        .container { max-width: 1000px; margin: 50px auto; padding: 0 20px; }
+        .container { max-width: 900px; margin: 50px auto; padding: 0 20px; }
 
         .card {
             background: var(--card-bg);
@@ -95,25 +95,79 @@
         }
         .step-item h3 { color: #58a6ff; margin-bottom: 10px; font-size: 1.2rem; }
 
-        /* Estilo da Galeria de Prints */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
-        }
-        .gallery-item {
-            background: #0d1117;
-            border: 1px solid var(--border-color);
+        /* Estilo do Carrossel Interativo */
+        .carousel-container {
+            position: relative;
+            max-width: 100%;
+            margin: 0 auto;
             border-radius: 8px;
             overflow: hidden;
-            transition: transform 0.2s;
+            border: 1px solid var(--border-color);
+            background: #0d1117;
         }
-        .gallery-item:hover { transform: scale(1.02); border-color: var(--accent-blue); }
-        .gallery-item img {
+        .carousel-slide {
+            display: none;
+            text-align: center;
+        }
+        .carousel-slide.active {
+            display: block;
+        }
+        .carousel-slide img {
             width: 100%;
             height: auto;
             display: block;
+            cursor: zoom-in;
+        }
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: 1px solid var(--border-color);
+            padding: 12px 16px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+        .carousel-btn:hover { background: var(--accent-blue); }
+        .prev { left: 10px; }
+        .next { right: 10px; }
+        .carousel-dots {
+            text-align: center;
+            padding: 12px;
+            background: var(--card-bg);
+            border-top: 1px solid var(--border-color);
+        }
+        .dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin: 0 4px;
+            background-color: var(--border-color);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .dot.active { background-color: var(--accent-blue); }
+
+        /* Estilo do Modal de Ampliação (Lightbox) */
+        #lightbox {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            justify-content: center;
+            align-items: center;
+            cursor: zoom-out;
+        }
+        #lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
         }
 
         .faq-item { margin-bottom: 20px; }
@@ -175,6 +229,11 @@
 </head>
 <body>
 
+    <!-- Modal para Ampliar Imagem -->
+    <div id="lightbox" onclick="fecharLightbox()">
+        <img id="lightbox-img" src="" alt="Ampliado">
+    </div>
+
     <header>
         <div class="lang-container">
             <button class="btn-lang" id="langToggle" onclick="alternarIdioma()">🇧🇷 PT</button>
@@ -196,20 +255,36 @@
             </ul>
         </section>
 
-        <!-- Seção Galeria de Prints do App -->
+        <!-- Seção Carrossel de Prints Interativo -->
         <section class="card">
             <h2 id="t-gallery-title">📸 Interface Gallery</h2>
-            <p id="t-gallery-desc" style="color: var(--text-muted); margin-bottom: 15px;">Take a look at the modern and intuitive interface designed for maximum control.</p>
-            <div class="gallery-grid">
-                <div class="gallery-item"><img src="template1.png" alt="Cut It All Interface 1"></div>
-                <div class="gallery-item"><img src="template2.png" alt="Cut It All Interface 2"></div>
-                <div class="gallery-item"><img src="template3.png" alt="Cut It All Interface 3"></div>
-                <div class="gallery-item"><img src="template4.png" alt="Cut It All Interface 4"></div>
-                <div class="gallery-item"><img src="template5.png" alt="Cut It All Interface 5"></div>
-                <div class="gallery-item"><img src="template6.png" alt="Cut It All Interface 6"></div>
-                <div class="gallery-item"><img src="template7.png" alt="Cut It All Interface 7"></div>
-                <div class="gallery-item"><img src="template8.png" alt="Cut It All Interface 8"></div>
-                <div class="gallery-item"><img src="template9.png" alt="Cut It All Interface 9"></div>
+            <p id="t-gallery-desc" style="color: var(--text-muted); margin-bottom: 20px;">Click on any image to zoom in and check out the details.</p>
+            
+            <div class="carousel-container">
+                <div class="carousel-slide active"><img src="template1.png" alt="Interface 1" onclick="abrirLightbox(this.src)"></div>
+                <div class="carousel-slide"><img src="template2.png" alt="Interface 2" onclick="abrirLightbox(this.src)"></div>
+                <div class="carousel-slide"><img src="template3.png" alt="Interface 3" onclick="abrirLightbox(this.src)"></div>
+                <div class="carousel-slide"><img src="template4.png" alt="Interface 4" onclick="abrirLightbox(this.src)"></div>
+                <div class="carousel-slide"><img src="template5.png" alt="Interface 5" onclick="abrirLightbox(this.src)"></div>
+                <div class="carousel-slide"><img src="template6.png" alt="Interface 6" onclick="abrirLightbox(this.src)"></div>
+                <div class="carousel-slide"><img src="template7.png" alt="Interface 7" onclick="abrirLightbox(this.src)"></div>
+                <div class="carousel-slide"><img src="template8.png" alt="Interface 8" onclick="abrirLightbox(this.src)"></div>
+                <div class="carousel-slide"><img src="template9.png" alt="Interface 9" onclick="abrirLightbox(this.src)"></div>
+
+                <button class="carousel-btn prev" onclick="mudarSlide(-1)">&#10094;</button>
+                <button class="carousel-btn next" onclick="mudarSlide(1)">&#10095;</button>
+
+                <div class="carousel-dots">
+                    <span class="dot active" onclick="atualizarSlide(0)"></span>
+                    <span class="dot" onclick="atualizarSlide(1)"></span>
+                    <span class="dot" onclick="atualizarSlide(2)"></span>
+                    <span class="dot" onclick="atualizarSlide(3)"></span>
+                    <span class="dot" onclick="atualizarSlide(4)"></span>
+                    <span class="dot" onclick="atualizarSlide(5)"></span>
+                    <span class="dot" onclick="atualizarSlide(6)"></span>
+                    <span class="dot" onclick="atualizarSlide(7)"></span>
+                    <span class="dot" onclick="atualizarSlide(8)"></span>
+                </div>
             </div>
         </section>
 
@@ -271,6 +346,45 @@
     </footer>
 
     <script>
+        // Lógica do Carrossel
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.dot');
+
+        function mostrarSlide(n) {
+            if (n >= slides.length) slideIndex = 0;
+            if (n < 0) slideIndex = slides.length - 1;
+
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+
+            slides[slideIndex].classList.add('active');
+            dots[slideIndex].classList.add('active');
+        }
+
+        function mudarSlide(n) {
+            slideIndex += n;
+            mostrarSlide(slideIndex);
+        }
+
+        function atualizarSlide(n) {
+            slideIndex = n;
+            mostrarSlide(slideIndex);
+        }
+
+        // Lógica do Lightbox (Zoom)
+        function abrirLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = src;
+            lightbox.style.display = 'flex';
+        }
+
+        function fecharLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        // Dicionário de Idiomas
         const textos = {
             en: {
                 langBtn: "🇧🇷 PT",
@@ -283,7 +397,7 @@
                 f4Title: "Isolated Audio Extraction:", f4Desc: "Saves clean audio tracks in MP3, WAV, or FLAC with EBU R128 normalization.",
                 f5Title: "Batch Queue:", f5Desc: "Automates entire folders of media directly on your Windows PC.",
                 galleryTitle: "📸 Interface Gallery",
-                galleryDesc: "Take a look at the modern and intuitive interface designed for maximum control.",
+                galleryDesc: "Click on any image to zoom in and check out the details.",
                 howTitle: "⚡ How It Works in 3 Steps",
                 s1Title: "1. Drop your media", s1Desc: "Select individual video/audio files or batch process entire folders directly in the queue.",
                 s2Title: "2. Choose presets", s2Desc: "Configure silence detection thresholds, transcription options, or visual hardsub templates.",
@@ -312,7 +426,7 @@
                 f4Title: "Extração de Áudio Isolado:", f4Desc: "Salva trilhas limpas em MP3, WAV ou FLAC com normalização EBU R128.",
                 f5Title: "Fila em Lote:", f5Desc: "Automatiza pastas inteiras de mídias direto no seu Windows.",
                 galleryTitle: "📸 Galeria de Telas",
-                galleryDesc: "Dê uma olhada na interface moderna e intuitiva projetada para controle máximo.",
+                galleryDesc: "Clique em qualquer imagem para ampliar e conferir os detalhes.",
                 howTitle: "⚡ Como Funciona em 3 Passos",
                 s1Title: "1. Adicione a mídia", s1Desc: "Selecione arquivos individuais de vídeo/áudio ou processe pastas inteiras direto na fila.",
                 s2Title: "2. Escolha os ajustes", s2Desc: "Configure os limites de corte de silêncio, opções de transcrição ou modelos visuais de hardsub.",
@@ -355,7 +469,7 @@
             document.getElementById("t-f5-desc").innerText = t.f5Desc;
 
             document.getElementById("t-gallery-title").innerText = t.galleryTitle;
-            document.getElementById("t-gallery-desc").innerText = t.galleryTitle;
+            document.getElementById("t-gallery-desc").innerText = t.galleryDesc;
 
             document.getElementById("t-how-title").innerText = t.howTitle;
             document.getElementById("t-s1-title").innerText = t.s1Title;
