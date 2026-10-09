@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cut It All — Canivete Suíço de Mídia & Automação</title>
+    <title>Cut It All — Media & Automation Swiss Army Knife</title>
     <style>
         :root {
             --bg-color: #0d1117;
@@ -21,11 +21,32 @@
 
         header {
             background: linear-gradient(135deg, #161b22 0%, var(--accent-blue) 100%);
-            padding: 80px 20px;
+            padding: 60px 20px 80px 20px;
             text-align: center;
             border-bottom: 1px solid var(--border-color);
+            position: relative;
         }
-        header h1 { font-size: 3rem; color: #ffffff; margin-bottom: 15px; font-weight: 800; }
+
+        .lang-container {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+        }
+
+        .btn-lang {
+            background-color: #3b5998;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn-lang:hover { background-color: #2d4373; }
+
+        header h1 { font-size: 3rem; color: #ffffff; margin-bottom: 15px; font-weight: 800; margin-top: 20px; }
         header p { font-size: 1.25rem; color: var(--text-muted); max-width: 700px; margin: 0 auto 30px auto; }
 
         .btn-cta {
@@ -54,7 +75,7 @@
         }
         .card h2 { font-size: 1.8rem; color: #ffffff; margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 12px; }
         .card ul { list-style: none; }
-        .card li { padding: 12px 0; font-size: 1.1rem; border-bottom: 1px dashed var(--border-color); display: flex; align-items: center; gap: 10px; }
+        .card li { padding: 12px 0; font-size: 1.1rem; border-bottom: 1px dashed var(--border-color); display: flex; align-items: flex-start; gap: 10px; }
         .card li:last-child { border-bottom: none; }
 
         .download-section { text-align: center; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 40px; }
@@ -67,34 +88,98 @@
 <body>
 
     <header>
-        <h1>✂️ Cut It All</h1>
-        <p>O automatizador definitivo de cortes por silêncio, legendas inteligentes por IA (Whisper) e processamento de mídia local.</p>
-        <a href="#baixar" class="btn-cta">🚀 Baixar Versão Gratuita</a>
+        <div class="lang-container">
+            <button class="btn-lang" id="langToggle" onclick="alternarIdioma()">🇺🇸 EN</button>
+        </div>
+        <h1 id="t-title">✂️ Cut It All</h1>
+        <p id="t-subtitle">O automatizador definitivo de cortes por silêncio, legendas inteligentes por IA (Whisper) e processamento de mídia local.</p>
+        <a href="#baixar" class="btn-cta" id="t-cta-top">🚀 Baixar Versão Gratuita</a>
     </header>
 
     <div class="container">
         <section class="card">
-            <h2>🔥 O que o Cut It All faz por você:</h2>
+            <h2 id="t-feat-title">🔥 O que o Cut It All faz por você:</h2>
             <ul>
-                <li>✅ <strong>Corte Automático por Silêncio:</strong> Elimina pausas vazias e acelera a edição de vídeos instantaneamente.</li>
-                <li>✅ <strong>Legendas Automáticas com Whisper:</strong> Transcrição de áudio local de alta precisão orientada por inteligência artificial.</li>
-                <li>✅ <strong>Hardsub Profissional:</strong> Queima legendas estilizadas (TikTok/Reels, Gamer, Cinema) direto no vídeo.</li>
-                <li>✅ <strong>Extração de Áudio Isolado:</strong> Salva trilhas limpas em MP3, WAV ou FLAC com normalização EBU R128.</li>
-                <li>✅ <strong>Fila em Lote:</strong> Automatiza pastas inteiras de mídias direto no seu Windows.</li>
+                <li>✅ <strong id="t-f1-title">Corte Automático por Silêncio:</strong> <span id="t-f1-desc">Elimina pausas vazias e acelera a edição de vídeos instantaneamente.</span></li>
+                <li>✅ <strong id="t-f2-title">Legendas Automáticas com Whisper:</strong> <span id="t-f2-desc">Transcrição de áudio local de alta precisão orientada por inteligência artificial.</span></li>
+                <li>✅ <strong id="t-f3-title">Hardsub Profissional:</strong> <span id="t-f3-desc">Queima legendas estilizadas (TikTok/Reels, Gamer, Cinema) direto no vídeo.</span></li>
+                <li>✅ <strong id="t-f4-title">Extração de Áudio Isolado:</strong> <span id="t-f4-desc">Salva trilhas limpas em MP3, WAV ou FLAC com normalização EBU R128.</span></li>
+                <li>✅ <strong id="t-f5-title">Fila em Lote:</strong> <span id="t-f5-desc">Automatiza pastas inteiras de mídias direto no seu Windows.</span></li>
             </ul>
         </section>
 
         <section class="download-section" id="baixar">
-            <h2>Comece a Usar Agora</h2>
-            <p>Baixe a versão atual e otimize seus cortes em segundos.</p>
-            <!-- Substitua pelo link do seu executável ou Release -->
-            <a href="#" class="btn-cta">Baixar Cut It All (.exe)</a>
+            <h2 id="t-down-title">Comece a Usar Agora</h2>
+            <p id="t-down-desc">Baixe a versão atual e otimize os seus cortes em segundos.</p>
+            <a href="#" class="btn-cta" id="t-cta-bottom">Baixar Cut It All (.exe)</a>
         </section>
     </div>
 
     <footer>
-        <p>&copy; 2026 Cut It All. Performance máxima no Windows.</p>
+        <p id="t-footer">&copy; 2026 Cut It All. Performance máxima no Windows.</p>
     </footer>
 
+    <script>
+        const textos = {
+            pt: {
+                langBtn: "🇺🇸 EN",
+                subtitle: "O automatizador definitivo de cortes por silêncio, legendas inteligentes por IA (Whisper) e processamento de mídia local.",
+                ctaTop: "🚀 Baixar Versão Gratuita",
+                featTitle: "🔥 O que o Cut It All faz por você:",
+                f1Title: "Corte Automático por Silêncio:", f1Desc: "Elimina pausas vazias e acelera a edição de vídeos instantaneamente.",
+                f2Title: "Legendas Automáticas com Whisper:", f2Desc: "Transcrição de áudio local de alta precisão orientada por inteligência artificial.",
+                f3Title: "Hardsub Profissional:", f3Desc: "Queima legendas estilizadas (TikTok/Reels, Gamer, Cinema) direto no vídeo.",
+                f4Title: "Extração de Áudio Isolado:", f4Desc: "Salva trilhas limpas em MP3, WAV ou FLAC com normalização EBU R128.",
+                f5Title: "Fila em Lote:", f5Desc: "Automatiza pastas inteiras de mídias direto no seu Windows.",
+                downTitle: "Comece a Usar Agora",
+                downDesc: "Baixe a versão atual e otimize os seus cortes em segundos.",
+                ctaBottom: "Baixar Cut It All (.exe)",
+                footer: "&copy; 2026 Cut It All. Performance máxima no Windows."
+            },
+            en: {
+                langBtn: "🇧🇷 PT",
+                subtitle: "The ultimate automated silence remover, AI subtitle generator (Whisper), and local media processor.",
+                ctaTop: "🚀 Download Free Version",
+                featTitle: "🔥 What Cut It All does for you:",
+                f1Title: "Automatic Silence Cut:", f1Desc: "Eliminates empty pauses and speeds up video editing instantly.",
+                f2Title: "AI Subtitles with Whisper:", f2Desc: "High-precision local audio transcription powered by artificial intelligence.",
+                f3Title: "Professional Hardsub:", f3Desc: "Burns stylized subtitles (TikTok/Reels, Gamer, Cinema) directly into the video.",
+                f4Title: "Isolated Audio Extraction:", f4Desc: "Saves clean audio tracks in MP3, WAV, or FLAC with EBU R128 normalization.",
+                f5Title: "Batch Queue:", f5Desc: "Automates entire folders of media directly on your Windows PC.",
+                downTitle: "Start Using Now",
+                downDesc: "Download the current version and optimize your cuts in seconds.",
+                ctaBottom: "Download Cut It All (.exe)",
+                footer: "&copy; 2026 Cut It All. Maximum performance on Windows."
+            }
+        };
+
+        let idiomaAtual = "pt";
+
+        function alternarIdioma() {
+            idiomaAtual = idiomaAtual === "pt" ? "en" : "pt";
+            const t = textos[idiomaAtual];
+
+            document.getElementById("langToggle").innerText = t.langBtn;
+            document.getElementById("t-subtitle").innerText = t.subtitle;
+            document.getElementById("t-cta-top").innerText = t.ctaTop;
+            document.getElementById("t-feat-title").innerText = t.featTitle;
+            
+            document.getElementById("t-f1-title").innerText = t.f1Title;
+            document.getElementById("t-f1-desc").innerText = t.f1Desc;
+            document.getElementById("t-f2-title").innerText = t.f2Title;
+            document.getElementById("t-f2-desc").innerText = t.f2Desc;
+            document.getElementById("t-f3-title").innerText = t.f3Title;
+            document.getElementById("t-f3-desc").innerText = t.f3Desc;
+            document.getElementById("t-f4-title").innerText = t.f4Title;
+            document.getElementById("t-f4-desc").innerText = t.f4Desc;
+            document.getElementById("t-f5-title").innerText = t.f5Title;
+            document.getElementById("t-f5-desc").innerText = t.f5Desc;
+
+            document.getElementById("t-down-title").innerText = t.downTitle;
+            document.getElementById("t-down-desc").innerText = t.downDesc;
+            document.getElementById("t-cta-bottom").innerText = t.ctaBottom;
+            document.getElementById("t-footer").innerHTML = t.footer;
+        }
+    </script>
 </body>
 </html>
