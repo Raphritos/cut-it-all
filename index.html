@@ -66,7 +66,7 @@
         }
         .btn-cta:hover { background-color: var(--accent-green-hover); transform: translateY(-2px); }
 
-        .container { max-width: 900px; margin: 50px auto; padding: 0 20px; }
+        .container { max-width: 1000px; margin: 50px auto; padding: 0 20px; }
 
         .card {
             background: var(--card-bg);
@@ -95,11 +95,31 @@
         }
         .step-item h3 { color: #58a6ff; margin-bottom: 10px; font-size: 1.2rem; }
 
+        /* Estilo da Galeria de Prints */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .gallery-item {
+            background: #0d1117;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+        .gallery-item:hover { transform: scale(1.02); border-color: var(--accent-blue); }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
         .faq-item { margin-bottom: 20px; }
         .faq-item h3 { font-size: 1.1rem; color: #ffffff; margin-bottom: 5px; }
         .faq-item p { color: var(--text-muted); font-size: 0.95rem; }
 
-        /* Estilo dos botões de Doação (Buy Me a Coffee + Ko-fi) */
         .donate-card {
             text-align: center;
             background: linear-gradient(135deg, #161b22 0%, #1f242d 100%);
@@ -176,6 +196,23 @@
             </ul>
         </section>
 
+        <!-- Seção Galeria de Prints do App -->
+        <section class="card">
+            <h2 id="t-gallery-title">📸 Interface Gallery</h2>
+            <p id="t-gallery-desc" style="color: var(--text-muted); margin-bottom: 15px;">Take a look at the modern and intuitive interface designed for maximum control.</p>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="template1.png" alt="Cut It All Interface 1"></div>
+                <div class="gallery-item"><img src="template2.png" alt="Cut It All Interface 2"></div>
+                <div class="gallery-item"><img src="template3.png" alt="Cut It All Interface 3"></div>
+                <div class="gallery-item"><img src="template4.png" alt="Cut It All Interface 4"></div>
+                <div class="gallery-item"><img src="template5.png" alt="Cut It All Interface 5"></div>
+                <div class="gallery-item"><img src="template6.png" alt="Cut It All Interface 6"></div>
+                <div class="gallery-item"><img src="template7.png" alt="Cut It All Interface 7"></div>
+                <div class="gallery-item"><img src="template8.png" alt="Cut It All Interface 8"></div>
+                <div class="gallery-item"><img src="template9.png" alt="Cut It All Interface 9"></div>
+            </div>
+        </section>
+
         <!-- Seção Como Funciona -->
         <section class="card">
             <h2 id="t-how-title">⚡ How It Works in 3 Steps</h2>
@@ -212,14 +249,12 @@
             </div>
         </section>
 
-        <!-- Seção Dupla de Doação (Buy Me a Coffee + Ko-fi) -->
+        <!-- Seção Dupla de Doação -->
         <section class="donate-card">
             <h2 id="t-donate-title">☕ Support the Project</h2>
             <p id="t-donate-desc">Cut It All is 100% free and open. If this tool saved you hours of editing, choose your favorite platform to support!</p>
             <div class="donate-buttons">
-                <!-- Substitua 'seu_usuario_bmc' pelo link real do Buy Me a Coffee -->
                 <a href="https://buymeacoffee.com/raphritos" target="_blank" class="btn-coffee" id="t-btn-coffee">☕ Buy me a coffee</a>
-                <!-- Substitua 'seu_usuario_kofi' pelo link real do Ko-fi -->
                 <a href="https://ko-fi.com/raphritos" target="_blank" class="btn-kofi" id="t-btn-kofi">🍵 Support on Ko-fi</a>
             </div>
         </section>
@@ -247,6 +282,8 @@
                 f3Title: "Professional Hardsub:", f3Desc: "Burns stylized subtitles (TikTok/Reels, Gamer, Cinema) directly into the video.",
                 f4Title: "Isolated Audio Extraction:", f4Desc: "Saves clean audio tracks in MP3, WAV, or FLAC with EBU R128 normalization.",
                 f5Title: "Batch Queue:", f5Desc: "Automates entire folders of media directly on your Windows PC.",
+                galleryTitle: "📸 Interface Gallery",
+                galleryDesc: "Take a look at the modern and intuitive interface designed for maximum control.",
                 howTitle: "⚡ How It Works in 3 Steps",
                 s1Title: "1. Drop your media", s1Desc: "Select individual video/audio files or batch process entire folders directly in the queue.",
                 s2Title: "2. Choose presets", s2Desc: "Configure silence detection thresholds, transcription options, or visual hardsub templates.",
@@ -274,6 +311,8 @@
                 f3Title: "Hardsub Profissional:", f3Desc: "Queima legendas estilizadas (TikTok/Reels, Gamer, Cinema) direto no vídeo.",
                 f4Title: "Extração de Áudio Isolado:", f4Desc: "Salva trilhas limpas em MP3, WAV ou FLAC com normalização EBU R128.",
                 f5Title: "Fila em Lote:", f5Desc: "Automatiza pastas inteiras de mídias direto no seu Windows.",
+                galleryTitle: "📸 Galeria de Telas",
+                galleryDesc: "Dê uma olhada na interface moderna e intuitiva projetada para controle máximo.",
                 howTitle: "⚡ Como Funciona em 3 Passos",
                 s1Title: "1. Adicione a mídia", s1Desc: "Selecione arquivos individuais de vídeo/áudio ou processe pastas inteiras direto na fila.",
                 s2Title: "2. Escolha os ajustes", s2Desc: "Configure os limites de corte de silêncio, opções de transcrição ou modelos visuais de hardsub.",
@@ -314,6 +353,9 @@
             document.getElementById("t-f4-desc").innerText = t.f4Desc;
             document.getElementById("t-f5-title").innerText = t.f5Title;
             document.getElementById("t-f5-desc").innerText = t.f5Desc;
+
+            document.getElementById("t-gallery-title").innerText = t.galleryTitle;
+            document.getElementById("t-gallery-desc").innerText = t.galleryTitle;
 
             document.getElementById("t-how-title").innerText = t.howTitle;
             document.getElementById("t-s1-title").innerText = t.s1Title;
